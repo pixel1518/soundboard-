@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Мемний Soundboard</title>
+    <style>
+        body {
+            background-color: #121214;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Акуратний пульт */
+        .soundboard {
+            width: 340px;
+            background-color: #1a1a1e;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #00a8cc;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 168, 204, 0.3);
+        }
+
+        /* Сетка кнопок */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        /* Музичні кнопки */
+        .sound-btn {
+            padding: 20px 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .sound-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Різні кольори для кнопок */
+        .btn-1 { background: linear-gradient(135deg, #ff5252, #c41c1c); }
+        .btn-2 { background: linear-gradient(135deg, #00a8cc, #007791); }
+        .btn-3 { background: linear-gradient(135deg, #4caf50, #2e7d32); }
+        .btn-4 { background: linear-gradient(135deg, #ffb300, #ff8f00); }
+        .btn-5 { background: linear-gradient(135deg, #9c27b0, #6a1b9a); }
+        .btn-6 { background: linear-gradient(135deg, #e91e63, #ad1457); }
+
+        .sound-btn:hover {
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="soundboard">
+        <h2>🎵 my Soundboard</h2>
+        <div class="grid">
+            <button class="sound-btn btn-1" onclick="playSound('https://google.com')">🔔 Ковбелл</button>
+            <button class="sound-btn btn-2" onclick="playSound('https://google.com')">⏰ Будильник</button>
+            <button class="sound-btn btn-3" onclick="playSound('https://google.com')">👽 Прибулець</button>
+            <button class="sound-btn btn-4" onclick="playSound('https://google.com')">🎺 Свисток</button>
+            <button class="sound-btn btn-5" onclick="playSound('https://google.com')">💥 Удар (Boink)</button>
+            <button class="sound-btn btn-6" onclick="playSound('https://google.com')">🎮 Game Over</button>
+        </div>
+    </div>
+
+    <script>
+        // Функція для відтворення звуку
+        function playSound(url) {
+            const audio = new Audio(url);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
